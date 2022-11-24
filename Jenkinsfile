@@ -1,15 +1,10 @@
 pipeline {
 	agent any
 	stages {
-		stage('Checkout SCM') {
-			steps {
-				git 'https://github.com/gouhang26/ict3103labtest.git'
-			}
-		}
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'default'
+				dependencyCheck additionalArguments: '--format HTML --format XML ', odcInstallation: 'Default'
 			}
 		}
 	}	
